@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Robot Head -->
+    <path fill="#FFFFFF" d="M8 12 H32 Q36 12 36 16 V32 Q36 36 32 36 H8 Q4 36 4 32 V16 Q4 12 8 12Z M12 8 V4 H14 V8 Z"/>
+    
+    <!-- Eyes -->
+    <circle cx="15" cy="22" r="3" fill="#1a1f2c"/>
+    <circle cx="25" cy="22" r="3" fill="#1a1f2c"/>
+    
+    <!-- Smile -->
+    <path d="M14 28 Q20 32 26 28" stroke="#1a1f2c" stroke-width="2" stroke-linecap="round"/>
+</svg>

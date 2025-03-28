@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandhu - AI Chatbot</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add debug information -->
+    <style>
+        /* Fallback styles in case CSS doesn't load */
+        .debug-info {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px;
+            font-size: 12px;
+            z-index: 9999;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="/static/images/robot-logo.svg" alt="Bandhu Logo">
+        </div>
+        <div class="nav-links">
+            <a href="/" class="active">Home</a>
+            <a href="#">Features</a>
+            <a href="#">About</a>
+        </div>
+        <div class="auth-button">
+            <a href="/signup" class="login-btn">Login / Signup</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>
+                    <span class="highlight">Introducing</span>
+                    <span class="main-title">Emerging Chatbot</span>
+                    <span class="highlight">Bandhu</span>
+                </h1>
+                <a href="/signup" class="cta-button">Chat with Bandhu</a>
+            </div>
+            <div class="hero-image">
+                <img src="/static/images/robot.svg" alt="Bandhu Chatbot">
+            </div>
+        </div>
+    </main>
+
+    <!-- Debug information -->
+    <div class="debug-info"></div>
+
+    <!-- Add debug script -->
+    <script>
+        window.onload = function() {
+            // Check if styles are loaded
+            const styles = document.styleSheets;
+            const debugInfo = document.querySelector('.debug-info');
+            let cssLoaded = false;
+            
+            for (let i = 0; i < styles.length; i++) {
+                try {
+                    if (styles[i].href && styles[i].href.includes('styles.css')) {
+                        cssLoaded = true;
+                        break;
+                    }
+                } catch (e) {
+                    console.error('Error checking stylesheet:', e);
+                }
+            }
+
+            if (!cssLoaded) {
+                debugInfo.style.display = 'block';
+                debugInfo.textContent = 'Warning: styles.css not loaded properly';
+                console.error('styles.css not loaded');
+            }
+        };
+    </script>
+</body>
+</html> 

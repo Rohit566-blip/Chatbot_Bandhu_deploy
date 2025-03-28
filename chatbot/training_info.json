@@ -1,0 +1,33 @@
+{
+    "num_documents": 31,
+    "num_classes": 23,
+    "num_words": 88,
+    "classes": [
+        "Creation_of_bandhu",
+        "Department_info",
+        "Khushi_info",
+        "Prerna_info",
+        "Rohit_info",
+        "Saniya_info",
+        "chai_wala",
+        "clubs_in_department",
+        "department_events_seminars",
+        "department_president",
+        "establish_info",
+        "gate_policy",
+        "goodbye",
+        "greeting",
+        "internship_opportunities",
+        "kenshu_event",
+        "open_elective_course",
+        "open_elective_own_branch",
+        "options",
+        "student_info",
+        "technical_events",
+        "thanks",
+        "training_placement_activities"
+    ],
+    "training_complete": true,
+    "model_accuracy": 0.9354838728904724,
+    "model_loss": 0.14813214540481567
+}

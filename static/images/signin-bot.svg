@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Definitions -->
+    <defs>
+        <!-- Glows -->
+        <filter id="screen-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feFlood flood-color="#00E5FF" flood-opacity="0.5"/>
+            <feComposite in2="blur" operator="in"/>
+            <feMerge>
+                <feMergeNode/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <!-- Gradients -->
+        <linearGradient id="body-white" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FFFFFF"/>
+            <stop offset="100%" style="stop-color:#E0E0E0"/>
+        </linearGradient>
+        
+        <linearGradient id="body-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#7CC3FF"/>
+            <stop offset="100%" style="stop-color:#5AA3E8"/>
+        </linearGradient>
+
+        <linearGradient id="heart-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#FF6B6B"/>
+            <stop offset="100%" style="stop-color:#FF4949"/>
+        </linearGradient>
+    </defs>
+
+    <!-- Main Body Group -->
+    <g transform="translate(75, 50)">
+        <!-- Body Base (White) -->
+        <path d="M75 120
+                 A75 75 0 0 1 150 195
+                 A75 75 0 0 1 75 270
+                 A75 75 0 0 1 0 195
+                 A75 75 0 0 1 75 120" 
+              fill="url(#body-white)"/>
+
+        <!-- Body Overlay (Blue) -->
+        <path d="M75 140
+                 L115 140
+                 Q125 160 115 180
+                 Q105 200 75 200
+                 Z" 
+              fill="url(#body-blue)"/>
+
+        <!-- Head -->
+        <g transform="translate(-25, -30)">
+            <!-- Head Base (White) -->
+            <rect x="0" y="0" width="200" height="140" rx="40" fill="url(#body-white)"/>
+
+            <!-- Screen (Dark) -->
+            <rect x="20" y="20" width="160" height="100" rx="20" fill="#1a1f2c"/>
+
+            <!-- Eyes and Brackets -->
+            <g filter="url(#screen-glow)">
+                <!-- Open Eye -->
+                <circle cx="70" cy="70" r="20" fill="#00E5FF"/>
+                <!-- Winking Eye -->
+                <path d="M110 70 Q130 65, 150 70" 
+                      stroke="#00E5FF" 
+                      stroke-width="10" 
+                      stroke-linecap="round"/>
+                
+                <!-- Corner Brackets -->
+                <path d="M30 30 L40 30 L40 40" stroke="#00E5FF" stroke-width="3"/>
+                <path d="M160 30 L150 30 L150 40" stroke="#00E5FF" stroke-width="3"/>
+                <path d="M30 110 L40 110 L40 100" stroke="#00E5FF" stroke-width="3"/>
+                <path d="M160 110 L150 110 L150 100" stroke="#00E5FF" stroke-width="3"/>
+            </g>
+        </g>
+
+        <!-- Side Ears/Antennas -->
+        <ellipse cx="-10" cy="70" rx="15" ry="30" fill="url(#body-blue)" transform="rotate(-15)"/>
+        <ellipse cx="160" cy="70" rx="15" ry="30" fill="url(#body-blue)" transform="rotate(15)"/>
+
+        <!-- Center Light -->
+        <circle cx="75" cy="180" r="12" fill="#00E5FF" filter="url(#screen-glow)">
+            <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- Arms -->
+        <path d="M0 150 Q-20 170 -10 190" stroke="url(#body-white)" stroke-width="20" stroke-linecap="round"/>
+        <path d="M150 150 Q170 170 160 190" stroke="url(#body-white)" stroke-width="20" stroke-linecap="round"/>
+    </g>
+
+    <!-- Animation -->
+    <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="0 0; 0 -10; 0 0"
+        dur="4s"
+        repeatCount="indefinite"
+        additive="sum"/>
+</svg> 
